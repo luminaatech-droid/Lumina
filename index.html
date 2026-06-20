@@ -1,207 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina | Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #070a13;
+            --panel-bg: rgba(255, 255, 255, 0.03);
+            --panel-border: rgba(255, 255, 255, 0.08);
+            --primary-gold: #FBBF24;
+            --accent-purple: #4F46E5;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+        }
 
-<title>Lumina | Coming Soon</title>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 3rem 1.5rem;
+            position: relative;
+        }
 
-body{
-    font-family:'Inter',sans-serif;
-    background:#0B1020;
-    color:white;
-    min-height:100vh;
-    overflow-x:hidden;
-}
+        /* Abstract Premium Glow System */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.18) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.5) 0%, transparent 100%);
+            z-index: 1;
+        }
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:2rem;
-    position:relative;
-}
+        /* Modern tech mesh subtle accents */
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.8;
+            z-index: 1;
+        }
 
-.hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-    radial-gradient(circle at top left,#4F46E5 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#F59E0B 0%,transparent 30%);
-    opacity:.35;
-}
+        .container {
+            max-width: 850px;
+            position: relative;
+            z-index: 2;
+        }
 
-.container{
-    max-width:900px;
-    position:relative;
-    z-index:2;
-}
+        /* Logo Branding Integration */
+        .brand-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
 
-.logo{
-    font-size:4rem;
-    font-weight:800;
-    margin-bottom:1rem;
-    letter-spacing:-2px;
-}
+        .logo-img {
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 20px rgba(79, 70, 229, 0.3));
+        }
 
-.logo span{
-    color:#FBBF24;
-}
+        .logo-text {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #ffffff 60%, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.badge{
-    display:inline-block;
-    padding:.6rem 1.2rem;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:999px;
-    margin-bottom:2rem;
-    font-size:.9rem;
-}
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1.2rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 999px;
+            margin-bottom: 2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--primary-gold);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
 
-h1{
-    font-size:clamp(2.5rem,6vw,5rem);
-    line-height:1.1;
-    margin-bottom:1.5rem;
-}
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            background: linear-gradient(to bottom, #ffffff 70%, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.highlight{
-    color:#FBBF24;
-}
+        .highlight {
+            background: linear-gradient(135deg, #FFD043 0%, #F59E0B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
 
-.subtitle{
-    font-size:1.2rem;
-    line-height:1.8;
-    color:#cbd5e1;
-    max-width:700px;
-    margin:auto;
-}
+        .subtitle {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            color: #cbd5e1;
+            max-width: 680px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
 
-.features{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:1rem;
-    margin:3rem 0;
-}
+        /* 3-Column Clean Pillar Framework */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin: 3.5rem 0;
+        }
 
-.feature{
-    background:rgba(255,255,255,.05);
-    padding:1rem 1.5rem;
-    border-radius:14px;
-    border:1px solid rgba(255,255,255,.08);
-}
+        .feature {
+            background: var(--panel-bg);
+            padding: 1.25rem 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--panel-border);
+            backdrop-filter: blur(8px);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.cta{
-    margin-top:2rem;
-}
+        .feature:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
 
-.btn{
-    display:inline-block;
-    padding:1rem 2rem;
-    background:#FBBF24;
-    color:#111827;
-    text-decoration:none;
-    border-radius:12px;
-    font-weight:700;
-    transition:.3s;
-}
+        .cta {
+            margin-top: 2rem;
+        }
 
-.btn:hover{
-    transform:translateY(-2px);
-}
+        /* High-Converting Glowing Action Button */
+        .btn {
+            display: inline-block;
+            padding: 1.1rem 2.5rem;
+            background: linear-gradient(135deg, #FFD043 0%, #F59E0B 100%);
+            color: #070a13;
+            text-decoration: none;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: -0.01em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 30px rgba(245, 158, 11, 0.25);
+            position: relative;
+        }
 
-.footer{
-    margin-top:3rem;
-    color:#94a3b8;
-    font-size:.95rem;
-}
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(245, 158, 11, 0.4);
+        }
 
-.socials{
-    margin-top:1rem;
-}
+        .btn:active {
+            transform: translateY(-1px);
+        }
 
-.socials a{
-    color:white;
-    text-decoration:none;
-    margin:0 .7rem;
-}
+        .footer {
+            margin-top: 4rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
 
-@media(max-width:768px){
-    .logo{
-        font-size:3rem;
-    }
+        .footer p {
+            letter-spacing: 0.02em;
+        }
 
-    .subtitle{
-        font-size:1rem;
-    }
-}
-</style>
+        .socials {
+            margin-top: 1.25rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .socials a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .socials a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* Responsive Layout Optimization */
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+                gap: 0.85rem;
+                padding: 0 1rem;
+            }
+
+            .logo-img {
+                height: 55px;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<section class="hero">
+    <section class="hero">
+        <div class="container">
 
-<div class="container">
+            <div class="brand-wrapper">
+                <img src="Lumina pfp.png" alt="Lumina Logo" class="logo-img">
+                <div class="logo-text">Lumina</div>
+            </div>
 
-<div class="logo">
-Lumina<span>.</span>
-</div>
+            <div class="badge">
+                Launching Soon
+            </div>
 
-<div class="badge">
-🚀 Coming Soon
-</div>
+            <h1>
+                Learn <span class="highlight">Practical AI Skills</span><br>
+                That Actually Get You Hired
+            </h1>
 
-<h1>
-Learn <span class="highlight">Practical AI Skills</span><br>
-That Actually Get You Hired
-</h1>
+            <p class="subtitle">
+                Lumina is building the next generation of AI education for students and fresh graduates across Egypt and the MENA region. Learn through hands-on projects, real-world tools, and career-focused training designed for the future of work.
+            </p>
 
-<p class="subtitle">
-Lumina is building the next generation of AI education for students and fresh graduates across Egypt and the MENA region.
-Learn through hands-on projects, real-world tools, and career-focused training designed for the future of work.
-</p>
+            <div class="features">
+                <div class="feature">Artificial Intelligence</div>
+                <div class="feature">Career Readiness</div>
+                <div class="feature">Hands-On Projects</div>
+            </div>
 
-<div class="features">
-<div class="feature">🤖 Artificial Intelligence</div>
-<div class="feature">📊 Data Analytics</div>
-<div class="feature">💼 Career Readiness</div>
-<div class="feature">🚀 Hands-On Projects</div>
-</div>
+            <div class="cta">
+                <a href="#" class="btn">
+                    Join the Waitlist
+                </a>
+            </div>
 
-<div class="cta">
-<a href="#" class="btn">
-Join the Waitlist
-</a>
-</div>
+            <div class="footer">
+                <p>Empowering the next generation of AI talent.</p>
+                <div class="socials">
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Facebook</a>
+                </div>
+            </div>
 
-<div class="footer">
-<p>
-Empowering the next generation of AI talent.
-</p>
-
-<div class="socials">
-<a href="#">Instagram</a>
-<a href="#">LinkedIn</a>
-<a href="#">Facebook</a>
-</div>
-</div>
-
-</div>
-
-</section>
+        </div>
+    </section>
 
 </body>
 </html>
