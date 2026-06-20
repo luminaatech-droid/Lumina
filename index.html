@@ -1,3 +1,10 @@
+If you use the raw GitHub URL (`[https://github.com/luminaatech-droid/Lumina/blob/main/Lumina%20pfp.png](https://github.com/luminaatech-droid/Lumina/blob/main/Lumina%20pfp.png)`) directly inside an `<img>` tag, the image will still break. That link points to the GitHub webpage interface (the wrapper code, comments, buttons) rather than the actual raw image file.
+
+To link directly to the raw file hosted on your repository, you need to use the `raw.githubusercontent.com` domain.
+
+Here is the updated, production-ready `index.html` code utilizing your exact repository asset link converted into its direct raw format:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -252,8 +259,8 @@
 
             <!-- Brand Header -->
             <div class="brand-wrapper">
-                <!-- URL Encoded spaces fix for GitHub Pages live environments -->
-                <img src="Lumina%20pfp.png" alt="Lumina Logo" class="logo-img">
+                <!-- Using the direct raw cdn link to pull the transparent asset directly from repository main branch safely -->
+                <img src="https://raw.githubusercontent.com/luminaatech-droid/Lumina/main/Lumina%20pfp.png" alt="Lumina Logo" class="logo-img">
                 <div class="logo-text">Lumina</div>
             </div>
 
@@ -301,3 +308,5 @@
 
 </body>
 </html>
+
+```
