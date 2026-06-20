@@ -43,6 +43,7 @@
             position: relative;
         }
 
+        /* Abstract Glow Background System */
         .hero::before {
             content: "";
             position: absolute;
@@ -54,6 +55,7 @@
             z-index: 1;
         }
 
+        /* Tech Mesh Pattern Overlay */
         .hero::after {
             content: "";
             position: absolute;
@@ -70,6 +72,7 @@
             z-index: 2;
         }
 
+        /* Logo Configuration */
         .brand-wrapper {
             display: flex;
             flex-direction: column;
@@ -78,11 +81,18 @@
             margin-bottom: 2.5rem;
         }
 
-        .logo-img {
-            height: 70px;
+        .logo-svg-container {
+            height: 80px;
             width: auto;
-            object-fit: contain;
-            filter: drop-shadow(0 4px 20px rgba(79, 70, 229, 0.3));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0 4px 25px rgba(224, 96, 44, 0.25)) drop-shadow(0 4px 25px rgba(244, 192, 77, 0.2));
+        }
+
+        .logo-svg-container svg {
+            height: 100%;
+            width: auto;
         }
 
         .logo-text {
@@ -137,6 +147,7 @@
             font-weight: 400;
         }
 
+        /* 3-Column Focus Grid */
         .features {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -229,8 +240,8 @@
                 padding: 0 1rem;
             }
 
-            .logo-img {
-                height: 55px;
+            .logo-svg-container {
+                height: 65px;
             }
 
             .subtitle {
@@ -250,10 +261,55 @@
     <section class="hero">
         <div class="container">
 
-            <!-- Brand Header -->
+            <!-- Brand Header with Embedded SVG -->
             <div class="brand-wrapper">
-                <!-- Using the direct raw cdn link to pull the transparent asset directly from repository main branch safely -->
-                <img src="https://raw.githubusercontent.com/luminaatech-droid/Lumina/main/Lumina%20pfp.png" alt="Lumina Logo" class="logo-img">
+                <div class="logo-svg-container">
+                    <svg viewBox="39.5 68.5 602.5 553.0" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="darkFill" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#2A1847"/>
+                                <stop offset="100%" stop-color="#1E1235"/>
+                            </linearGradient>
+                            <linearGradient id="hubFill" x1="10%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#2A1847"/>
+                                <stop offset="60%" stop-color="#3A2154"/>
+                                <stop offset="100%" stop-color="#C94A1E"/>
+                            </linearGradient>
+                            <linearGradient id="goldStroke" x1="50%" y1="0%" x2="50%" y2="100%">
+                                <stop offset="0%" stop-color="#F4C04D"/>
+                                <stop offset="100%" stop-color="#B9762E"/>
+                            </linearGradient>
+                            <linearGradient id="bondVert" gradientUnits="userSpaceOnUse" x1="405.0" y1="304.0" x2="405.0" y2="203.0">
+                                <stop offset="0%" stop-color="#2A1847"/>
+                                <stop offset="100%" stop-color="#B9762E"/>
+                            </linearGradient>
+                            <linearGradient id="bondDiagGold" gradientUnits="userSpaceOnUse" x1="453.5" y1="332.0" x2="526.5" y2="283.0">
+                                <stop offset="0%" stop-color="#2A1847"/>
+                                <stop offset="100%" stop-color="#B9762E"/>
+                            </linearGradient>
+                            <linearGradient id="bondOrange" gradientUnits="userSpaceOnUse" x1="135.4" y1="382.6" x2="185.2" y2="417.0">
+                                <stop offset="0%" stop-color="#E0602C"/>
+                                <stop offset="100%" stop-color="#2A1847"/>
+                            </linearGradient>
+                        </defs>
+                        <g stroke-linecap="round">
+                            <line x1="273.50" y1="278.00" x2="356.50" y2="332.00" stroke="#2A1847" stroke-width="13"/>
+                            <line x1="225.00" y1="306.00" x2="225.00" y2="394.00" stroke="#2A1847" stroke-width="13"/>
+                            <line x1="405.00" y1="304.00" x2="405.00" y2="203.00" stroke="url(#bondVert)" stroke-width="13"/>
+                            <line x1="453.50" y1="332.00" x2="526.50" y2="283.00" stroke="url(#bondDiagGold)" stroke-width="13"/>
+                            <line x1="405.00" y1="416.00" x2="405.00" y2="487.00" stroke="#2A1847" stroke-width="13"/>
+                            <line x1="264.84" y1="463.00" x2="354.77" y2="516.00" stroke="#2A1847" stroke-width="13"/>
+                            <line x1="135.38" y1="382.64" x2="185.16" y2="417.00" stroke="url(#bondOrange)" stroke-width="13"/>
+                        </g>
+                        <polygon points="225.00,194.00 273.50,222.00 273.50,278.00 225.00,306.00 176.50,278.00 176.50,222.00" fill="url(#darkFill)"/>
+                        <polygon points="405.00,304.00 453.50,332.00 453.50,388.00 405.00,416.00 356.50,388.00 356.50,332.00" fill="url(#hubFill)"/>
+                        <polygon points="225.00,394.00 264.84,417.00 264.84,463.00 225.00,486.00 185.16,463.00 185.16,417.00" fill="none" stroke="#2A1847" stroke-width="13" stroke-linejoin="round"/>
+                        <polygon points="405.00,487.00 455.23,516.00 455.23,574.00 405.00,603.00 354.77,574.00 354.77,516.00" fill="none" stroke="#2A1847" stroke-width="13" stroke-linejoin="round"/>
+                        <polygon points="405.00,87.00 455.23,116.00 455.23,174.00 405.00,203.00 354.77,174.00 354.77,116.00" fill="none" stroke="url(#goldStroke)" stroke-width="13" stroke-linejoin="round"/>
+                        <polygon points="575.00,199.00 623.50,227.00 623.50,283.00 575.00,311.00 526.50,283.00 526.50,227.00" fill="none" stroke="url(#goldStroke)" stroke-width="13" stroke-linejoin="round"/>
+                        <circle cx="100" cy="360" r="42" fill="#E0602C"/>
+                    </svg>
+                </div>
                 <div class="logo-text">Lumina</div>
             </div>
 
@@ -301,5 +357,3 @@
 
 </body>
 </html>
-
-```
