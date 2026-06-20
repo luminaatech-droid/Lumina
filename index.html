@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lumina | Coming Soon</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#0B1020;
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:2rem;
+    position:relative;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#4F46E5 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#F59E0B 0%,transparent 30%);
+    opacity:.35;
+}
+
+.container{
+    max-width:900px;
+    position:relative;
+    z-index:2;
+}
+
+.logo{
+    font-size:4rem;
+    font-weight:800;
+    margin-bottom:1rem;
+    letter-spacing:-2px;
+}
+
+.logo span{
+    color:#FBBF24;
+}
+
+.badge{
+    display:inline-block;
+    padding:.6rem 1.2rem;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:999px;
+    margin-bottom:2rem;
+    font-size:.9rem;
+}
+
+h1{
+    font-size:clamp(2.5rem,6vw,5rem);
+    line-height:1.1;
+    margin-bottom:1.5rem;
+}
+
+.highlight{
+    color:#FBBF24;
+}
+
+.subtitle{
+    font-size:1.2rem;
+    line-height:1.8;
+    color:#cbd5e1;
+    max-width:700px;
+    margin:auto;
+}
+
+.features{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:1rem;
+    margin:3rem 0;
+}
+
+.feature{
+    background:rgba(255,255,255,.05);
+    padding:1rem 1.5rem;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.cta{
+    margin-top:2rem;
+}
+
+.btn{
+    display:inline-block;
+    padding:1rem 2rem;
+    background:#FBBF24;
+    color:#111827;
+    text-decoration:none;
+    border-radius:12px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.footer{
+    margin-top:3rem;
+    color:#94a3b8;
+    font-size:.95rem;
+}
+
+.socials{
+    margin-top:1rem;
+}
+
+.socials a{
+    color:white;
+    text-decoration:none;
+    margin:0 .7rem;
+}
+
+@media(max-width:768px){
+    .logo{
+        font-size:3rem;
+    }
+
+    .subtitle{
+        font-size:1rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="logo">
+Lumina<span>.</span>
+</div>
+
+<div class="badge">
+🚀 Coming Soon
+</div>
+
+<h1>
+Learn <span class="highlight">Practical AI Skills</span><br>
+That Actually Get You Hired
+</h1>
+
+<p class="subtitle">
+Lumina is building the next generation of AI education for students and fresh graduates across Egypt and the MENA region.
+Learn through hands-on projects, real-world tools, and career-focused training designed for the future of work.
+</p>
+
+<div class="features">
+<div class="feature">🤖 Artificial Intelligence</div>
+<div class="feature">📊 Data Analytics</div>
+<div class="feature">💼 Career Readiness</div>
+<div class="feature">🚀 Hands-On Projects</div>
+</div>
+
+<div class="cta">
+<a href="#" class="btn">
+Join the Waitlist
+</a>
+</div>
+
+<div class="footer">
+<p>
+Empowering the next generation of AI talent.
+</p>
+
+<div class="socials">
+<a href="#">Instagram</a>
+<a href="#">LinkedIn</a>
+<a href="#">Facebook</a>
+</div>
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>
